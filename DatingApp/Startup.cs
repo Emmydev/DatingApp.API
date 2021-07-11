@@ -21,6 +21,7 @@ using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using DatingApp.Helpers;
 using AutoMapper;
+using Microsoft.OpenApi.Models;
 
 namespace DatingApp
 {
@@ -61,9 +62,49 @@ namespace DatingApp
                         ValidateAudience = false
                     };
                 });
- 
-     
-            
+
+
+            services.AddSwaggerGen(x =>
+            {
+                x.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Dating App",
+                    Version = "V1",
+                    Description = "API for chatting application",
+                    TermsOfService = new Uri("http://www.datingapp.com/terms/"),
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Emmanuel Olayinka",
+                        Email = "olayinkaemmanuel52@gmail.com",
+                        Url = new Uri("https://github.com/Emmydev")
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "Dating API LICX",
+                        Url = new Uri("https://github.com/Emmydev"),
+                    },
+
+                });
+
+                var security = new Dictionary<string, IEnumerable<string>>
+                {
+                    {"Bearer", new string[0] }
+                };
+                x.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Description = "Dating App Cloud Authorization header using bearer scheme",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey,
+                });
+                x.AddSecurityRequirement(new OpenApiSecurityRequirement {
+                    {new OpenApiSecurityScheme {Reference = new OpenApiReference
+                    {
+                        Id = "Bearer",
+                        Type = ReferenceType.SecurityScheme
+                    } }, new List<string>() }
+                });
+            });
 
 
 
@@ -111,7 +152,11 @@ namespace DatingApp
             });
 
             // app.UseHttpsRedirection();
-
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint(url: "v1/swagger.json", name: "Dating App API");
+            });
 
 
 

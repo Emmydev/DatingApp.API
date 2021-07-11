@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dell\\Documents\\Visual Studio 2019\\DatingApp\\DatingApp\\DatingApp.csproj": {}
+    "C:\\Users\\EmmanuelOlayinka\\DatingApp.API\\DatingApp\\DatingApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dell\\Documents\\Visual Studio 2019\\DatingApp\\DatingApp\\DatingApp.csproj": {
+    "C:\\Users\\EmmanuelOlayinka\\DatingApp.API\\DatingApp\\DatingApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\Documents\\Visual Studio 2019\\DatingApp\\DatingApp\\DatingApp.csproj",
+        "projectUniqueName": "C:\\Users\\EmmanuelOlayinka\\DatingApp.API\\DatingApp\\DatingApp.csproj",
         "projectName": "DatingApp",
-        "projectPath": "C:\\Users\\Dell\\Documents\\Visual Studio 2019\\DatingApp\\DatingApp\\DatingApp.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\Documents\\Visual Studio 2019\\DatingApp\\DatingApp\\obj\\",
+        "projectPath": "C:\\Users\\EmmanuelOlayinka\\DatingApp.API\\DatingApp\\DatingApp.csproj",
+        "packagesPath": "C:\\Users\\EmmanuelOlayinka\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\EmmanuelOlayinka\\DatingApp.API\\DatingApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\EmmanuelOlayinka\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "AutoMapper": {
               "target": "Package",
@@ -85,6 +87,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.9, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.1.4, )"
             }
           },
           "imports": [
@@ -105,7 +111,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.204\\RuntimeIdentifierGraph.json"
         }
       }
     }
